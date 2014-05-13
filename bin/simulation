@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby -rubygems
+
+require './lib/dices/simulation'
+require './lib/formatters/plain'
+
+# enabling plain formatter
+class Simulation
+  include PlainFormatter
+end
+
+amount = ARGV[0]
+
+simulation = Simulation.new amount.to_i
+
+simulation.run
+simulation.print_all_results
+simulation.print_best_result
+
